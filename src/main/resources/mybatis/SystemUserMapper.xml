@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zjl.mapper.SystemUserMapper">
+    <!-- 查询集合 -->
+    <select id="getUserList"  resultType="SystemUser">
+        SELECT id, username, password from system_user
+    </select>
+    <update id="updateSystemUser" parameterType="SystemUser">
+        update SYSTEM_USER
+        set
+        username = #{username},
+        password = #{password}
+        where id=#{id}
+    </update>
+</mapper>
