@@ -49,6 +49,8 @@ public class WelComeAction {
             Long urlParmStr = userid;
             //通过bean工厂获取对象
             boolean beanStr = ApplicationContextHolder.getBean("welComeManage") == ApplicationContextHolder.getBean("welComeManage");
+            //异步延迟执行方法
+            welComeManage.asyncMethodWithVoidReturnType();
             return new ResultBean(null, 0, "success："+configProStr + serviceValStr + urlParmStr + beanStr + domain_name);
 
     }
